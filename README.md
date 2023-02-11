@@ -1,1 +1,1 @@
-First part of Go 0.1 course's lectures
+First part of Go 0.0 course's lectures
