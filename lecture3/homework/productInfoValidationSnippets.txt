@@ -1,0 +1,73 @@
+// #1 Reading input with spaces (needed for entering product title, description and image)
+// Don't forget to import "bufio" package
+stdin := bufio.NewScanner(os.Stdin)
+
+...
+
+fmt.Println("\nTitle:")
+stdin.Scan()
+title = stdin.Text()
+
+fmt.Println("\nDescription:")
+stdin.Scan()
+description = stdin.Text()
+
+...
+
+fmt.Println("\nImage:")
+stdin.Scan()
+image = stdin.Text()
+//--------------------
+
+
+
+
+
+
+
+
+
+
+// #2 You can use "goto" for changing the flow of a program
+// Or you can do it with a loop, think of a way
+GetInfoSingle:
+fmt.Println("Enter product's info")
+
+fmt.Println("\nTitle:")
+stdin.Scan()
+title = stdin.Text()
+
+fmt.Println("\nDescription:")
+stdin.Scan()
+description = stdin.Text()
+...
+if !validate(
+	title,
+	description,
+	price,
+	discount,
+	categoryID,
+	manufacturerID,
+	image,
+) {
+	fmt.Println("===========================================")
+	fmt.Println("= Error: bad data. Re-enter all the info. =")
+	fmt.Println("===========================================")
+	goto GetInfoSingle
+}
+//--------------------
+
+
+
+
+
+
+
+
+
+
+// #3 This is "validate" function's declaration. You need to complete it:
+func validate(title, description string, price, discount, categoryID, manufacturerID int, image string) bool {
+    // returns true or false
+}
+//--------------------
