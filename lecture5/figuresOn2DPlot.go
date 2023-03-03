@@ -36,27 +36,28 @@ func (s *Square) GetArea() float64 {
 }
 
 func main() {
-	square := Square{
-		Side: Line{
-			Start: Point{
-				X: 4,
-				Y: 4,
-			},
-			Finish: Point{
-				X: 0,
-				Y: 4,
-			},
-		},
-	}
+	var square Square
+	var x, y float64
+
+	fmt.Println("Enter two points that represent a side of a square in 2D plot:")
+	fmt.Print("X1, Y1: ")
+	fmt.Scan(&x, &y)
+
+	square.Side.Start.X = x
+	square.Side.Start.Y = y
+
+	fmt.Print("X2, Y2: ")
+	fmt.Scan(&x, &y)
+
+	square.Side.Finish.X = x
+	square.Side.Finish.Y = y
 
 	fmt.Println(square)
-	fmt.Println(square.GetPerimeter())
-	fmt.Println(square.GetArea())
+	fmt.Println("The perimeter of the square, that have a side with the given line:", square.GetPerimeter())
+	fmt.Println("And it's area:", square.GetArea())
 
-	fmt.Printf("%T\n", square)
-	fmt.Printf("%T\n", square.Side)
-	fmt.Printf("%T\n", square.Side.Start)
-	fmt.Printf("%T\n", square.Side.Finish)
-	fmt.Printf("%T\n", square.Side.Finish.X)
-	fmt.Printf("%T\n", square.Side.Finish.Y)
+	fmt.Printf("The type of square object: %T\n", square)
+	fmt.Printf("The type of Side field of square object: %T\n", square.Side)
+	fmt.Printf("The type of Start field of Side field of square object: %T\n", square.Side.Start)
+	fmt.Printf("The type of X field of Start field of Side field of square object: %T\n", square.Side.Start.X)
 }
