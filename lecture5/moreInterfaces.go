@@ -11,6 +11,10 @@ func (t Telegram) Call() {
 	fmt.Println("Telegram to", t.Username)
 }
 
+func (t Telegram) Message() {
+	fmt.Println("Telegram to", t.Username)
+}
+
 type Whatsapp struct {
 	Phone string
 }
@@ -19,9 +23,21 @@ func (w Whatsapp) Call() {
 	fmt.Println("Whatsapp to", w.Phone)
 }
 
+func (w Whatsapp) Message() {
+	fmt.Println("Whatsapp to", w.Phone)
+}
+
 type Instagram struct {
 	Username string
 	Email    string
+}
+
+func (i Instagram) Call() {
+	fmt.Println("Instagram to", i.Email)
+}
+
+func (i Instagram) Message() {
+	fmt.Println("Instagram to", i.Email)
 }
 
 type Caller interface {
@@ -40,14 +56,20 @@ func main() {
 	whatsapp := Whatsapp{
 		Phone: "999888777",
 	}
-	//instagram := Instagram{
-	//	Username: "paraparadox",
-	//	Email:    "paraparadox@protonmail.com",
-	//}
+	instagram := Instagram{
+		Username: "paraparadox",
+		Email:    "paraparadox@protonmail.com",
+	}
 
 	callToFriend(telegram)
 	callToFriend(whatsapp)
-	//callToFriend(instagram)
+	callToFriend(instagram)
+
+	fmt.Println()
+
+	messageToFriend(telegram)
+	messageToFriend(whatsapp)
+	messageToFriend(instagram)
 }
 
 func callToFriend(caller Caller) {
