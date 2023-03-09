@@ -2,7 +2,7 @@ package models
 
 import (
 	"fmt"
-	"lectures-part-1/lecture7/helpers"
+	"github.com/SoftClub-Go-0-0/lectures-part-1/lecture7/helpers"
 	"math/rand"
 )
 

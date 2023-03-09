@@ -1,6 +1,6 @@
 package main
 
-import "lectures-part-1/lecture7/models"
+import "github.com/SoftClub-Go-0-0/lectures-part-1/lecture7/models"
 
 func main() {
 	company := models.NewCompany()
