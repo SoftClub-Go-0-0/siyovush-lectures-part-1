@@ -1,0 +1,41 @@
+// при запуске программы
+fmt.Println("How many parking spaces does your parking have?")
+
+// список доступных команд
+fmt.Println("\nHere are the list of commands I can process:")
+fmt.Println("\t0 - Exit")
+fmt.Println("\t1 - Park a car into an empty slot")
+fmt.Println("\t2 - Remove a car from a slot")
+fmt.Println("\t3 - Show the list of slots with their cars")
+
+// когда на парковке еще остались машины, и завершить работу нельзя
+fmt.Println("\nWe cannot exit the program, there are cars in parking. Remove them before exiting.")
+
+// когда парковка пуста, и можно выходить, напечатав количество обслуженных автомобилей
+fmt.Println("\nTotal cars served:", _)
+fmt.Println("Exiting... Bye!")
+
+// когда на парковке нет свободных мест для добавления новых машин
+fmt.Println("\nThere is no available space in parking!")
+
+// когда на парковке есть свободное место
+fmt.Println("\nAdding car to parking. Enter car's info.")
+
+// после добавления машины
+fmt.Println("\nAdded car to parking")
+
+// при выезде автомобиля из стоянки
+fmt.Println("Removing car from parking...")
+fmt.Print("Enter car's number: ")
+
+// после выезда автомобиля из стоянки
+fmt.Println("\nCar removed from parking")
+
+// когда на стоянке нет автомобиля с указанными номерами
+fmt.Println("\nThere is no such car in parking!")
+
+// при распечатке списка всех парковочных мест
+fmt.Println("\nList of all the slots in parking:")
+
+// при неопознанной команде
+fmt.Println("\nI don't know this command")
