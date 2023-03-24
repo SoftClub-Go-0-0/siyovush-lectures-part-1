@@ -5,9 +5,10 @@ func main() {
 	// basic sending and receiving operations
 	//ch := make(chan int)
 	//go func() {
-	//	ch <- 5
+	//	ch <- 5 // sending
 	//}()
-	//fmt.Println(<-ch)
+	//a := <-ch
+	//fmt.Println(a)
 
 	// =====
 
@@ -15,14 +16,22 @@ func main() {
 	// receiving from closed channel
 	//ch := make(chan int)
 	//go func() {
-	//	ch <- 5
-	//}()
-	//go func() {
 	//	ch <- 6
 	//}()
+	//go func() {
+	//	ch <- 5
+	//}()
+	//
+	//a, ok := <-ch
+	//
+	//fmt.Println(a, ok)
+	//fmt.Println(<-ch)
+	//
+	//a, ok = <-ch
+	//if !ok {
+	//	log.Fatal("Channel is closed")
+	//}
 	//close(ch)
-	//fmt.Println(<-ch)
-	//fmt.Println(<-ch)
 	//fmt.Println(<-ch)
 	//fmt.Println(<-ch)
 	//fmt.Println(<-ch)
@@ -111,7 +120,7 @@ func main() {
 	//
 	//go func() {
 	//	fmt.Println("Привет Мир!")
-	//	time.Sleep(time.Second)
+	//	time.Sleep(time.Second * 5)
 	//	done <- 2
 	//}()
 	//
