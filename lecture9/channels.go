@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 func main() {
 	// example #1
 	// basic sending and receiving operations
@@ -110,31 +115,31 @@ func main() {
 
 	// example #7
 	// synchronizing goroutines (multiple)
-	//done := make(chan int)
-	//
-	//go func() {
-	//	fmt.Println("Hello World!")
-	//	time.Sleep(time.Second)
-	//	done <- 1
-	//}()
-	//
-	//go func() {
-	//	fmt.Println("Привет Мир!")
-	//	time.Sleep(time.Second * 5)
-	//	done <- 2
-	//}()
-	//
-	//totalGoroutines := 2
-	//for totalGoroutines > 0 {
-	//	x := <-done
-	//	if x == 1 {
-	//		fmt.Println("Finished first goroutine")
-	//		totalGoroutines--
-	//	} else if x == 2 {
-	//		fmt.Println("Finished second goroutine")
-	//		totalGoroutines--
-	//	}
-	//}
-	//
-	//fmt.Println("exiting program")
+	done := make(chan int)
+
+	go func() {
+		fmt.Println("Hello World!")
+		time.Sleep(time.Second)
+		done <- 1
+	}()
+
+	go func() {
+		fmt.Println("Привет Мир!")
+		time.Sleep(time.Second * 5)
+		done <- 2
+	}()
+
+	totalGoroutines := 2
+	for totalGoroutines > 0 {
+		x := <-done
+		if x == 1 {
+			fmt.Println("Finished first goroutine")
+			totalGoroutines--
+		} else if x == 2 {
+			fmt.Println("Finished second goroutine")
+			totalGoroutines--
+		}
+	}
+
+	fmt.Println("exiting program")
 }
