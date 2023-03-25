@@ -24,7 +24,7 @@ func main() {
 		default:
 			fmt.Println("Drink tea")
 		}
-		time.Sleep(time.Second)
+		time.Sleep(time.Millisecond * 500)
 	}
 }
 
@@ -45,5 +45,7 @@ func startSomeGoroutines(first, second, third chan bool) {
 		workTime = rand.Intn(5)
 
 		go someFunc(workTime, third)
+
+		time.Sleep(time.Second)
 	}
 }
